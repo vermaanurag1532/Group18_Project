@@ -1,0 +1,58 @@
+version: "3.1"
+
+nlu:
+  - intent: greet
+    examples: |
+      - Hi
+      - Hello
+      - Hey there!
+      - Good morning
+      - Good evening
+      - Hi bot!
+
+  - intent: view_menu
+    examples: |
+      - Can I see the menu?
+      - What's on the menu?
+      - Show me the menu
+      - What do you serve?
+      - Menu, please
+
+  - intent: place_order
+    examples: |
+      - I want to order [2](quantity) [Pizza](item_name)
+      - Can I get [1](quantity) [Salad](item_name)?
+      - I'd like to have [3](quantity) [Burgers](item_name)
+      - Please order [4](quantity) [Pizza](item_name) for me.
+
+  - intent: provide_name
+    examples: |
+      - My name is [John](customer_name)
+      - You can call me [Alice](customer_name)
+      - I'm [Mark](customer_name)
+
+  - intent: confirm_payment
+    examples: |
+      - Yes, please proceed.
+      - Confirm payment
+      - Go ahead with the payment.
+      - Proceed.
+
+  - intent: say_no
+    examples: |
+      - No
+      - Not now
+      - I don't want to pay right now
+      - I'll order something else
+
+  - intent: ask_for_suggestions
+    examples: |
+      - Can you suggest something good?
+      - What do you recommend?
+      - I'm not sure what to order. Any suggestions?
+
+  - intent: order_food
+    examples: |
+      - I’ll take a [Burger](item_name).
+      - Add [2](quantity) [Pasta](item_name) to my order.
+      - [Salad](item_name), please.

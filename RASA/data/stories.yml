@@ -1,0 +1,65 @@
+version: "3.1"
+
+stories:
+  - story: Greet, view menu, and place an order
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: view_menu
+      - action: action_fetch_menu
+      - intent: place_order
+      - action: utter_ask_item_name
+      - intent: provide_item_name
+      - action: utter_ask_quantity
+      - intent: provide_quantity
+      - action: utter_ask_customer_name
+      - intent: provide_name
+      - action: action_place_order
+      - action: utter_confirm_order
+      - intent: confirm_payment
+      - action: utter_thank_you
+
+  - story: Ask for suggestions and place an order
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: ask_for_suggestions
+      - action: action_handle_suggestions
+      - intent: place_order
+      - action: utter_ask_item_name
+      - intent: provide_item_name
+      - action: utter_ask_quantity
+      - intent: provide_quantity
+      - action: utter_ask_customer_name
+      - intent: provide_name
+      - action: action_place_order
+      - action: utter_confirm_order
+      - intent: confirm_payment
+      - action: utter_thank_you
+
+  - story: Decline payment and order something else
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: view_menu
+      - action: action_fetch_menu
+      - intent: place_order
+      - action: utter_ask_item_name
+      - intent: provide_item_name
+      - action: utter_ask_quantity
+      - intent: provide_quantity
+      - action: utter_ask_customer_name
+      - intent: provide_name
+      - action: action_place_order
+      - action: utter_confirm_order
+      - intent: say_no
+      - action: utter_order_cancelled
+      - intent: place_order
+      - action: utter_ask_item_name
+      - intent: provide_item_name
+      - action: utter_ask_quantity
+      - intent: provide_quantity
+      - action: action_place_order
+      - action: utter_confirm_order
+      - intent: confirm_payment
+      - action: utter_thank_you

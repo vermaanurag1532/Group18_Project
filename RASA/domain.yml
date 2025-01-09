@@ -1,0 +1,65 @@
+version: "3.1"
+
+intents:
+  - greet
+  - view_menu
+  - place_order
+  - provide_name
+  - provide_item_name
+  - provide_quantity
+  - confirm_payment
+  - ask_for_suggestions
+  - say_no
+  - thank_you
+  - order_food
+
+entities:
+  - item_name
+  - quantity
+  - customer_name
+
+slots:
+  item_name:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: item_name
+  quantity:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: quantity
+  customer_name:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: customer_name
+
+responses:
+  utter_greet:
+    - text: |
+        Welcome to our restaurant! 😊 
+        I'm here to assist you with your orders. Would you like to see our menu?
+  utter_show_menu:
+    - text: "Here is our menu: {menu_list}"
+  utter_ask_item_name:
+    - text: "What would you like to order today? 😊"
+  utter_ask_quantity:
+    - text: "How many would you like?"
+  utter_ask_customer_name:
+    - text: "May I have your name to confirm the order?"
+  utter_confirm_order:
+    - text: |
+        Thank you, {customer_name}! Your order of {quantity} {item_name} is being prepared. Would you like to proceed with the payment?
+  utter_order_cancelled:
+    - text: "No problem! Let me know if you'd like to order something else. 😊"
+  utter_thank_you:
+    - text: "Thank you for dining with us! Have a great day! 😊"
+  utter_repeat_order:
+    - text: |
+        Could you confirm if your order is {quantity} {item_name}? Let me know if you'd like to add or change anything.
+
+actions:
+  - action_fetch_menu
+  - action_place_order
+  - action_handle_suggestions

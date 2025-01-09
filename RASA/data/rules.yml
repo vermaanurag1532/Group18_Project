@@ -1,0 +1,22 @@
+version: "3.1"
+
+rules:
+  - rule: Handle greet
+    steps:
+      - intent: greet
+      - action: utter_greet
+
+  - rule: Show menu
+    steps:
+      - intent: view_menu
+      - action: action_fetch_menu
+
+  - rule: Confirm payment
+    steps:
+      - intent: confirm_payment
+      - action: utter_thank_you
+
+  - rule: Decline payment
+    steps:
+      - intent: say_no
+      - action: utter_order_cancelled
